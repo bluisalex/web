@@ -16,7 +16,7 @@ $(document).ready(function() {
     })(jQuery);
   
     // input text for typing animation 
-    $("#holder").writeText("WEB DESIGNER + FRONT-END DEVELOPER");
+    $("#holder").writeText("BUSINESS TECHNOLOGY ENTHUSIAST + BIRD WATCHING CONNOISSEUR");
   
     // initialize wow.js
     new WOW().init();
@@ -157,40 +157,39 @@ $(document).ready(function() {
         var formData = $(form).serialize();
   
         // Submit the form using AJAX.
-        $.ajax({
-          type: 'POST',
-          url: $(form).attr('action'),
-          data: formData
-        })
-        .done(function(response) {
-          // Make sure that the formMessages div has the 'success' class.
-          $(formMessages).removeClass('error');
-          $(formMessages).addClass('success');
+        // $.ajax({
+        //   type: 'POST',
+        //   url: $(form).attr('action'),
+        //   data: formData
+        // })
+        // .done(function(response) {
+        //   // Make sure that the formMessages div has the 'success' class.
+        //   $(formMessages).removeClass('error');
+        //   $(formMessages).addClass('success');
   
-          // Set the message text.
-          $(formMessages).text(response);
+        //   // Set the message text.
+        //   $(formMessages).text(response);
   
-          // Clear the form.
-          $('#name').val('');
-          $('#email').val('');
-          $('#message').val('');
-        })
-        .fail(function(data) {
-          // Make sure that the formMessages div has the 'error' class.
-          $(formMessages).removeClass('success');
-          $(formMessages).addClass('error');
+        //   // Clear the form.
+        //   $('#name').val('');
+        //   $('#email').val('');
+        //   $('#message').val('');
+        // })
+        // .fail(function(data) {
+        //   // Make sure that the formMessages div has the 'error' class.
+        //   $(formMessages).removeClass('success');
+        //   $(formMessages).addClass('error');
   
-          // Set the message text.
-          if (data.responseText !== '') {
-            $(formMessages).text(data.responseText);
-          } else {
-            $(formMessages).text('Oops! An error occured and your message could not be sent.');
-          }
-        });
+        //   // Set the message text.
+        //   if (data.responseText !== '') {
+        //     $(formMessages).text(data.responseText);
+        //   } else {
+        //     $(formMessages).text('Oops! An error occured and your message could not be sent.');
+        //   }
+        // });
   
       });
   
     });
   
   });
-  

@@ -1,6 +1,6 @@
-  /* general styles */
+/* general styles */
 
-  body {
+body {
     font-family: 'Raleway', sans-serif !important;
   }
 
@@ -14,7 +14,7 @@
   }
 
   h1 {
-    color: #FF6363;
+    color: blue;
     font-weight: bold;
   }
 
@@ -92,7 +92,7 @@
 
   .fa-bars {
     display: none !important;
-    color: #FF6363;
+    color: blue;
     float: right;
     padding: 20px;
     position: fixed;
@@ -102,7 +102,7 @@
   }
 
   .fa-times {
-    color: #FF6363;
+    color: blue;
     float: right;
     padding: 20px;
     right: 0;
@@ -118,7 +118,7 @@
 
   .header-links li {
     color: white;
-    display: inline;
+    /* display: inline; */
     float: right;
     padding: 15px;
     font-size: 16px;
@@ -126,11 +126,12 @@
 
   .header-links a {
     color: #757575;
-    -webkit-transition: all 0.2s ease-in;
+    /* -webkit-transition: all 0.2s ease-in; */
+    transition: all 0.2s ease-in;
   }
 
   .header-links a:hover {
-    color: #FF6363 !important;
+    color: blue !important;
   }
 
   /* slide out nav menu styles */
@@ -164,7 +165,7 @@
   }
 
   .nav-links a:hover {
-    color: #FF6363;
+    color: darkblue;
     -webkit-transition: all 0.6s ease-in-out;
     -o-transition: all 0.6s ease-in-out;
     -ms-transition: all 0.6s ease-in-out;
@@ -208,8 +209,10 @@
   }
 
   .aboutme {
-    background: url("https://s3-us-west-2.amazonaws.com/files.bradengelhardt.com/brad-bg-main.jpg") no-repeat;
+    /* background: url("./graphics/home_page.JPG") no-repeat;  */
     background-size: cover;
+    background-color: black;
+    filter: grayscale(0%);
   }
 
   .aboutme p {
@@ -222,13 +225,14 @@
 
 
   .fa-chevron-down {
-    color: #FF6363 !important;
+    color: blue !important;
     bottom: 10px;
     margin-left: -30px;
     cursor: pointer;
     position: absolute;
     opacity: 0;
-    -webkit-transition: 1.2s ease;
+    /* -webkit-transition: 1.2s ease; */
+    transition: 1.2s ease;
   }
 
 
@@ -384,12 +388,12 @@
   }
 
   .fp-controlArrow.fp-next {
-    border-color: transparent transparent transparent #FF6363 !important;
+    border-color: transparent transparent transparent blue !important;
     right: 45px !important;
   }
 
   .fp-controlArrow.fp-prev {
-    border-color: transparent #FF6363 transparent transparent !important;
+    border-color: transparent blue transparent transparent !important;
     left: 45px !important;
   }
 
@@ -464,10 +468,10 @@
     padding: 12px;
     min-width: 200px;
     border-radius: 2px;
-    border: 2px solid #FF6363;
+    border: 2px solid blue;
     text-align: center;
     font-size: 1em;
-    color: #FF6363;
+    color: blue;
     background-color: white;
     text-decoration: none;
     text-transform: uppercase;
@@ -475,7 +479,7 @@
   }
 
   #submit:hover {
-    background-color: #FF6363;
+    background-color: blue;
     color: white;
     -webkit-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
@@ -504,7 +508,7 @@
   }
 
   .social-links a:hover {
-    color: #FF6363;
+    color: blue;
     -webkit-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -553,7 +557,7 @@
   }
 
   .spinner > div {
-    background-color: #FF6363;
+    background-color: blue;
     height: 100%;
     width: 6px;
     display: inline-block;
@@ -610,7 +614,7 @@
     animation: 1s blink step-end infinite;
   }
 
-@keyframes "blink" {
+/* @keyframes "blink" {
   from, to {
     color: transparent;
   }
@@ -653,7 +657,7 @@
   50% {
     color: white;
   }
-}
+} */
 
 .success {
   padding: 1em;
