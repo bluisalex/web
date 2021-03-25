@@ -1,195 +1,174 @@
-$(document).ready(function() {
+/////////POPUP///////////
 
-    // typing animation
-    (function($) {
-      $.fn.writeText = function(content) {
-          var contentArray = content.split(""),
-              current = 0,
-              elem = this;
-          setInterval(function() {
-              if(current < contentArray.length) {
-                  elem.text(elem.text() + contentArray[current++]);
-              }
-          }, 80);
-      };
-      
-    })(jQuery);
-  
-    // input text for typing animation 
-    $("#holder").writeText("BUSINESS TECHNOLOGY ENTHUSIAST + BIRD WATCHING CONNOISSEUR");
-  
-    // initialize wow.js
-    new WOW().init();
-      
-    // Push the body and the nav over by 285px over
-    var main = function() {
-      $('.fa-bars').click(function() {
-        $('.nav-screen').animate({
-          right: "0px"
-        }, 200);
-  
-        $('body').animate({
-          right: "285px"
-        }, 200);
-      });
-  
-      // Then push them back */
-      $('.fa-times').click(function() {
-        $('.nav-screen').animate({
-          right: "-285px"
-        }, 200);
-  
-        $('body').animate({
-          right: "0px"
-        }, 200);
-      });
-  
-      $('.nav-links a').click(function() {
-        $('.nav-screen').animate({
-          right: "-285px"
-        }, 500);
-  
-        $('body').animate({
-          right: "0px"
-        }, 500);
-      });
-    };
-  
-    $(document).ready(main);
-    
-    // initiate full page scroll
-  
-    $('#fullpage').fullpage({
-      scrollBar: true,
-      responsiveWidth: 400,
-      navigation: true,
-      navigationTooltips: ['home', 'about', 'portfolio', 'contact', 'connect'],
-      anchors: ['home', 'about', 'portfolio', 'contact', 'connect'],
-      menu: '#myMenu',
-      fitToSection: false,
-  
-      afterLoad: function ( anchorLink, index){
-        var loadedSection = $(this);
-  
-  
-        //using index
-        if(index==1){
-          /* add opacity to arrow */
-          $('.fa-chevron-down').each(function(){
-            $(this).css('opacity','1')
-          });
-          $('.header-links a').each(function(){
-            $(this).css('color','white')
-          });
-          $('.header-links').css("background-color","transparent");
-        }
-  
-        else if(index!=1){
-          $('.header-links a').each(function(){
-            $(this).css('color','black')
-          });
-          $('.header-links').css('background-color', 'white');
-        }
-  
-        //using index
-        if(index == 2){
-  
-          /* animate skill bars */
-          $('.skillbar').each(function(){
-            $(this).find('.skillbar-bar').animate({
-              width: $(this).attr('data-percent')
-            },2500);
-          });
-        }
-      }
-    });
-   
-  
-    // move section down one
-    $(document).on('click', '#moveDown', function(){
-      $.fn.fullpage.moveSectionDown();
-    });
-  
-    // fullpage.js link navigation
-    $(document).on('click', '#skills', function(){
-      $.fn.fullpage.moveTo(2);
-    });
-  
-    $(document).on('click', '#projects', function(){
-      $.fn.fullpage.moveTo(3);
-    });
-  
-    $(document).on('click', '#contact', function(){
-      $.fn.fullpage.moveTo(4);
-    });
-  
-    // smooth scrolling
-    $(function() {
-      $('a[href*=#]:not([href=#])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-            $('html,body').animate({
-              scrollTop: target.offset().top
-            }, 700);
-            return false;
-          }
-        }
-      });
-    });
-  
-    //ajax form
-    $(function() {
-  
-      // Get the form.
-      var form = $('#ajax-contact');
-  
-      // Get the messages div.
-      var formMessages = $('#form-messages');
-  
-      // Set up an event listener for the contact form.
-      $(form).submit(function(e) {
-        // Stop the browser from submitting the form.
-        e.preventDefault();
-  
-        // Serialize the form data.
-        var formData = $(form).serialize();
-  
-        // Submit the form using AJAX.
-        // $.ajax({
-        //   type: 'POST',
-        //   url: $(form).attr('action'),
-        //   data: formData
-        // })
-        // .done(function(response) {
-        //   // Make sure that the formMessages div has the 'success' class.
-        //   $(formMessages).removeClass('error');
-        //   $(formMessages).addClass('success');
-  
-        //   // Set the message text.
-        //   $(formMessages).text(response);
-  
-        //   // Clear the form.
-        //   $('#name').val('');
-        //   $('#email').val('');
-        //   $('#message').val('');
-        // })
-        // .fail(function(data) {
-        //   // Make sure that the formMessages div has the 'error' class.
-        //   $(formMessages).removeClass('success');
-        //   $(formMessages).addClass('error');
-  
-        //   // Set the message text.
-        //   if (data.responseText !== '') {
-        //     $(formMessages).text(data.responseText);
-        //   } else {
-        //     $(formMessages).text('Oops! An error occured and your message could not be sent.');
-        //   }
-        // });
-  
-      });
-  
-    });
-  
+//Variables
+var modal = $(".modal_window");
+var content = $(".content-wrapper");
+var submit = $("#submit");
+var cancel = $("#cancel");
+var protect = $(".protect");
+var modalIcon = $("svg");
+
+//modal click
+modal.on('click', function(event) {
+   event.preventDefault();
+   protect.css("background", "hsla(0, 100%, 0%, 0.3)"); //dim the background lights
+   modalIcon.css("display", "none"); //hide svg icon
+   modal.addClass('active'); //toggle dialog
+   content.css('display', 'block');
+});
+
+//Hide if click outside the modal window
+$(document).mouseup(function(e) {
+  if (!modal.is(e.target) && modal.has(e.target).length === 0) {
+      modal.removeClass('active');
+      modalIcon.css('display', 'block');
+      content.css('display', 'none')
+      protect.css('background', 'none')
+   }
+});
+
+//MENTOR//
+$('.member').on('click', function(){
+  if (!$(this).hasClass('selected')){
+    $(this).addClass('selected');
+    $('.wrap').addClass('member-selected');
+    addCalendar($(this).find('.calendar'));
+  }
+  e.preventDefault();
+  e.stopPropagation();
+});
+
+$('.deselect-member, .restart').on('click', function(e){
+  $('.member').removeClass('selected');
+  $('.wrap').removeClass('member-selected date-selected slot-selected booking-complete');
+  e.preventDefault();
+  e.stopPropagation();
+});
+
+$('.deselect-date').on('click', function(e){
+  $('.wrap').removeClass('date-selected slot-selected');
+  $('.calendar *').removeClass('selected');
+  e.preventDefault();
+  e.stopPropagation();
+});
+
+$('.deselect-slot').on('click', function(e){
+  $('.wrap').removeClass('slot-selected');
+  $('.slots *').removeClass('selected');
+  e.preventDefault();
+  e.stopPropagation();
+});
+
+$('.form').on('submit', function(e){
+  $('.wrap').toggleClass('booking-complete');
+  e.preventDefault();
+  e.stopPropagation();
+})
+
+function invokeCalendarListener(){
+  $('.calendar td:not(.disabled)').on('click', function(e){
+    addSlots();
+    var date = $(this).html();
+    var day = $(this).data('day');
+    $('.date').html(day + ',  ' + date);
+    $(this).addClass('selected');
+    setTimeout(function(){
+      $('.wrap').addClass('date-selected');
+    },10);
+    e.preventDefault();
+    e.stopPropagation();
   });
+}
+
+
+function invokeSlotsListener(){
+  $('.slots li').on('click', function(e){
+    $(this).addClass('selected');
+    $('.wrap').addClass('slot-selected');
+    setTimeout(function(){
+      $('.selected.member input[name="name"]').focus();
+    }, 700);
+    e.preventDefault();
+    e.stopPropagation();
+  });
+}
+
+
+
+function addSlots(container){
+  
+  var number = Math.ceil(Math.random()*5 + 1);
+  var time = 7;
+  var endings = [':00', ':15', ':30', ':45'];
+  var timeDisplay = '';
+  var slots = ''
+  for(var i = 0; i < number; i++){
+    time += Math.ceil(Math.random()*3);
+    timeDisplay = time + endings[Math.floor(Math.random()*4)];
+    slots += '<li>'+timeDisplay+'</li>';
+  }
+  
+  $('.selected .slots').html(slots);
+  
+  invokeSlotsListener();
+  
+}
+
+
+
+function addCalendar(container){
+  //get dates
+  var today = new Date();
+  var day = today.getDay()
+  var date = today.getDate();
+  var month = today.getMonth();
+  var year = today.getFullYear();
+  var first = new Date();
+  first.setDate(1);
+  var startDay = first.getDay();
+  var dayLabels = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+  var monthLengths = [31,28,31,30,31,30,31,31,30,31,30,31];
+  var monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var dayNames = ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+  
+  var current = 1 - startDay;
+  
+  //assemble calendar
+  var calendar = '<label class="date"></label><label class="month">'+monthNames[month]+'</label> <label class="year">'+year+'</label>';
+  
+  calendar += '<table><tr>';
+  dayLabels.forEach(function(label){
+    calendar += '<th>'+label+'</th>';
+  })
+  calendar += '</tr><tr>';
+  var dayClasses = '';
+  while( current <= 30){
+    if (current > 0){
+      dayClasses = '';
+      today.setDate(current);
+      if (today.getDay() == 0 || today.getDay() == 6){
+        dayClasses += ' disabled';
+      }
+      if (current < date){
+        dayClasses += ' disabled';
+      }
+      if (current == date){
+        dayClasses += ' today';
+      }
+      calendar += '<td class="'+dayClasses+'" data-day="'+dayNames[(current + startDay)%7]+'">'+current+'</td>';
+    } else {
+      calendar += '<td></td>';
+    }
+    
+    if ( (current + startDay) % 7 == 0){
+      calendar += '</tr><tr>';
+    }
+    
+    current++
+  }
+  
+  calendar += '</tr></table>';
+  container.html(calendar);
+  
+  invokeCalendarListener();
+}

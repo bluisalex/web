@@ -5,8 +5,8 @@ body {
 	margin: 0;
 	font-family: sans-serif;
 	font-size: 16px;
-	display: flex;
-	width: 100%;
+	display: relative;
+	/* width: 100%; */
 	/* height: 100vh; */
 	/* align-items: center;
 	justify-content: center; */
@@ -23,26 +23,38 @@ img {
 } */
 /* START MODULE STYLING */
 .module-gallery {
-	width: 100%;
-	padding-top: 65px;
+	width: auto;
+  padding-top: 65px;
+  max-width: 1030px;
 }
 .module-gallery .slider-wrapper {
 	display: flex;
 	overflow: hidden;
-	max-height: auto
+  max-height: auto;
+  max-width: 1030px;
+  
 }
 .module-gallery .slider-preview {
-	width: 100%;
-	height: 100%;
+	width: auto;
+  height: auto;
+  padding-inline-start: 0px;
+  /* padding-right: 3.5px; */
 }
 
 .module-gallery .slider-thumb {
-	max-width: 125px;
+  /* max-width: auto; */
+  max-width: 110px;
+  /* padding-inline-start: 3.5px; */
+  padding-top: 23px;
+  padding-left: 3.5px;
+  /* padding-right: 3.5px; */
 }
 .module-gallery .slider-thumb li {
-	max-height: auto;
+  max-height: auto;
+
 }
 .module-gallery .slider-thumb img {
+  /* padding-top: 3px; */
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -50,8 +62,9 @@ img {
 .module-gallery .slider-thumb .slick-prev,
 .module-gallery .slider-thumb .slick-next {
 	z-index: 1;
-	height: 1em;
-	width: 100%;
+	height: 20px;
+  width: 100%;
+  max-width: 102px ;
 	background-color: #000;
 	opacity: 0.3;
 	transition: opacity 800ms ease;
@@ -76,7 +89,11 @@ img {
 	bottom: -0.5em;
 }
 
-.slick-track .slick-track { display: none; }
+.slick-track .slick-track { 
+  display: auto; 
+  /* width: 1px; */
+  /* padding-right: 40px; */
+}
 
 
 @media (max-width: 767px) {
@@ -716,3 +733,99 @@ ul
     animation: 1s blink step-end infinite;
   }
 
+/**
+ * A transparent 3d world map using the D3 library with SVG.
+ * 
+ * For a Canvas version see: https://codepen.io/chrislaskey/pen/reYxeM
+ *
+ * Combines Jason Davies SVG World Tour bl.ocks map:
+ * https://bl.ocks.org/jasondavies/4183701
+ *
+ * With the SVG Transparent World Map bl.ocks map:
+ * https://bl.ocks.org/emeeks/c88435cb568dcaf11308
+ **/
+
+ .padTB20 {
+  position: flex; 
+  /* bottom: 0; */
+  width: auto;
+
+
+ }
+ 
+
+ /* .world {
+float: right;
+max-width: 300px;
+position: top; 
+width: 100%;
+vertical-align: top;
+overflow: auto;
+
+
+  } */
+
+  #world {
+    height: 300px;
+    width: 300px;
+    border: 1px solid black;
+    overflow: auto;
+  position: relative; /* add this line! */
+}
+
+.svg{
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+}
+
+
+  .svg-content-responsive {
+    display: inline-block;
+    position: relative;
+    top: 10px;
+    left: 0;
+}
+
+ .world-outline {
+	fill: none;
+	stroke: rgba(0, 0, 0, 0.1);
+  stroke-width: 1.0px;
+
+  }
+  
+  .back-country {
+	fill: #dadac4;
+	stroke: #fff;
+	stroke-width: 0.0px;
+	stroke-linejoin: round;
+  }
+  
+  .back-line {
+	fill: none;
+	stroke: #000;
+	stroke-opacity: .05;
+	stroke-width: .5px;
+  }
+  
+  .country {
+	fill: #737368;
+	stroke: #fff;
+	stroke-width: 0.0px;
+	stroke-linejoin: round;
+  }
+  
+  .line {
+	fill: none;
+	stroke: #000;
+	stroke-opacity: .08;
+	stroke-width: .5px;
+  }
+  
+  text {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	text-anchor: middle;
+  }
