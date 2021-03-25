@@ -472,7 +472,7 @@ svg {
 }
 
 .content-wrapper {
- /* display: none; */
+ display: none;
  
 }
 
@@ -828,7 +828,7 @@ body {
 .instructions {
   margin-bottom: 25rem;
   text-align: center;
-  height: 80vh;
+  /* height: 80vh; */
   font-weight: 300;
   color: #312eff;
 }
