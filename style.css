@@ -438,13 +438,13 @@ svg {
 
 /* /////popup///// */
 
-/* .protect {
+.protect {
   position: absolute;
   width: 100%;
   height: 100%;
   background: hsla(0, 100%, 0%, 0);
   transition: all 400ms cubic-bezier(0.200, 0.965, 0.000, 1.005);
-} */
+}
 
 /* .modal_window {
   cursor: pointer;
@@ -462,10 +462,10 @@ svg {
   box-shadow: 0px 5px 5px rgba(126, 111, 111, 0.39);
   transition: all 400ms cubic-bezier(0.200, 0.965, 0.000, 1.005);
 } */
-/* 
+
 .modal_window.active {
   cursor: default;
-
+  position: relative;
   transform: scale(1);
   border-radius: .125em;
 
@@ -473,7 +473,7 @@ svg {
   padding: 0px;
   border-radius: 10px; 
 
-} */
+}
 
 
 
@@ -634,7 +634,7 @@ html * {
   box-sizing: border-box;
 }
 
-body {
+/* body {
   width: 100vw;
   height: 100vh;
   background: linear-gradient(60deg, #1900fa, #616bff);
@@ -642,18 +642,25 @@ body {
   font-family: "Alegreya Sans", sans-serif;
   font-size: 40rem;
   overflow: hidden;
+} */
+
+.grouping{
+  position: relative;
 }
 
 .wrap {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position: relative;
+  padding: 25px;;
+  /* top: 50%;
+  left: 50%; */
+
   transform: translate3d(-50%, -50%, 0);
   color: #312eff;
-  width: 500rem;
-  height: 450rem;
+  /* width: 500rem;
+  height: 450rem; */
 }
 .wrap.member-selected .member:not(.selected) {
+  position: relative;   
   opacity: 0;
   pointer-events: none;
   transform: perspective(100rem) translatez(-50rem);
@@ -871,7 +878,7 @@ body {
   padding: 20rem;
   height: 100rem;
   cursor: pointer;
-  position: absolute;
+  position: relative;
   top: 0;
   transition: opacity 800ms cubic-bezier(0.645, 0.045, 0.355, 1), transform 500ms cubic-bezier(0.645, 0.045, 0.355, 1), height 300ms cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 800ms cubic-bezier(0.645, 0.045, 0.355, 1);
   box-shadow: 5rem 5rem 20rem rgba(49, 46, 255, 0.15);
@@ -923,7 +930,8 @@ body {
 }
 .member.selected {
   transform: translatey(0rem) perspective(100rem) translatez(0rem);
-  height: 450rem;
+  height: 100%;
+  position: relative;
   cursor: default;
   z-index: 2;
   box-shadow: 10rem 10rem 60rem rgba(3, 0, 199, 0.1);
@@ -1208,6 +1216,8 @@ body {
   /*height: 450rem;Could be more or less, depending on screen size */
 }
 
+
+
 /* The Close Button */
 .close {
 
@@ -1220,6 +1230,56 @@ body {
 
 .close:hover,
 .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* The Close Button */
+.close2 {
+
+  position: relative;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* The Close Button */
+.close3 {
+
+  position: relative;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close3:hover,
+.close3:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* The Close Button */
+.close4 {
+
+  position: relative;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close4:hover,
+.close4:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
@@ -1361,6 +1421,22 @@ body {
     float:center;
     /* top: 50%; */
    left: -30%;
+
+  }
+  .layout.layout--collage .image--3-of-5-scenic {
+    flex-basis: 39%;
+    /* position: relative; */
+    overflow: hidden;
+    text-align:center;
+  }
+  .layout.layout--collage .image--3-of-5-scenic img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align:center;
+    float:center;
+    /* top: 50%; */
+   /* left: -30%; */
 
   }
 }
