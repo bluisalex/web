@@ -17,8 +17,8 @@
   <input type="radio" name="radio" id="contact">
 
   <header class="header">
-    <a href="./photography.html">
-      <img src="graphics/logo.png" style="width:150px;height:50px;">
+    <a href="/">
+      <img src="graphics/logo.png" style="width:150px;height:50px;padding-left:10px;">
     </a>
     <div class="nav">
       <label for="about">ABOUT ME</label>
@@ -108,15 +108,180 @@
         </div>
       </section>
       <section class="section works">
-        <a class="work" href="./photography.html">
+        <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <!-- <p>Some text in the Modal..</p> -->
+            <div class="container" id="photo_collage">
+              <div class='toggle-bar'>
+                <a class='icon icon--toggle' href="#" id="toggle-list"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="#9E9E9E" d="M15 5.5h70V32H15z"/><g fill="none" stroke="#9E9E9E" stroke-miterlimit="10"><path stroke-width="4" d="M26 38h47"/><path stroke-width="2" d="M39 43h21M39 46h21"/></g><g><path fill="#9E9E9E" d="M15 52.5h70V79H15z"/><g fill="none" stroke="#9E9E9E" stroke-miterlimit="10"><path stroke-width="4" d="M26 85h47"/><path stroke-width="2" d="M39 90h21M39 93h21"/></g></g></svg></a>
+                <a class='icon icon--toggle' href="#" id="toggle-collage"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="#9E9E9E" d="M0 0h63.3v30H0zm68.3 0H100v30H68.3zM0 35h30v30H0zm70 0h30v30H70zm-35 0h30v30H35zM0 70h47.5v30H0zm52.5 0H100v30H52.5z"/></svg></a>
+              </div>
+              
+            </div>
+
+          </div>
+          <div id='layout' class="layout layout--collage">
+            <div class="image image--3-of-5">
+              <img src="birds/0.jpeg">
+              <div class="description">
+                <h1>Tufted Titmouse</h1>
+                <p>Mount Vernon, Virginia</p>
+              </div>
+            </div>
+            <div class="image image--2-of-5">
+              <img src="birds/1V9A0133.jpeg">   
+              <div class="description">
+                <h1>Test Description</h1>
+                        <p>This is a mock description of a recipe.</p>
+              </div>
+            </div>
+            <div class="image image--3">
+              <img src="birds/1V9A0123.jpeg">    
+              <div class="description">
+                <h1>Test Description</h1>
+                        <p>This is a mock description of a recipe.</p>
+              </div>
+            </div>
+            <div class="image image--3">
+              <img src="birds/1V9A0171.jpeg">     
+              <div class="description">
+                <h1>Test Description</h1>
+                        <p>This is a mock description of a recipe.</p>
+              </div>
+            </div>
+            <div class="image image--3">
+              <img src="birds/1V9A0245.jpeg">
+              <div class="description">
+                <h1>Test Description</h1>
+                        <p>This is a mock description of a recipe. Let's test out word wrapping in our description. Also, what
+                will happen if our description is taller than our image. This will take a lot of text to figure out, but it's
+                important that this behaviour is well known. La de da Lorem ipsum - How much more text is needed? Probably
+                just one more line. Well we need another line to push us above the top of the image I guess. Oh - overflow!</p>
+              </div>
+            </div>
+            <div class="image image--2-of-5">
+              <img src="birds/1V9A0292.jpeg">     
+              <div class="description">
+                <h1>Test Description</h1>
+                        <p>This is a mock description of a recipe.</p>
+              </div>
+            </div>
+            <div class="image image--3-of-5">
+              <img src="birds/1V9A0307.jpeg">  
+              <div class="description">
+                <h1>Test Description</h1>
+                        <p>This is a mock description of a recipe.</p>
+              </div>
+            </div>
+            <div class="image image--3">
+              <img src="birds/1V9A0372.jpeg">    
+              <div class="description">
+                <h1>Test Description</h1>
+                        <p>This is a mock description of a recipe.</p>
+              </div>
+            </div>
+            <div class="image image--3">
+              <img src="birds/1V9A0504.jpeg">     
+              <div class="description">
+                <h1>Test Description</h1>
+                        <p>This is a mock description of a recipe.</p>
+              </div>
+            </div>
+            <div class="image image--3">
+              <img src="birds/1V9A0526.jpeg">
+              <div class="description">
+                <h1>Test Description</h1>
+                        <p>This is a mock description of a recipe. Let's test out word wrapping in our description. Also, what
+                will happen if our description is taller than our image. This will take a lot of text to figure out, but it's
+                important that this behaviour is well known. La de da Lorem ipsum - How much more text is needed? Probably
+                just one more line. Well we need another line to push us above the top of the image I guess. Oh - overflow!</p>
+              </div>
+            </div>
+            <div class="image image--3-of-5">
+              <img src="birds/1V9A0683.jpeg">
+              <div class="description">
+                <h1>Tufted Titmouse</h1>
+                <p>Mount Vernon, Virginia</p>
+              </div>
+            </div>
+            <div class="image image--2-of-5">
+              <img src="birds/1V9A0739.jpeg">   
+              <div class="description">
+                <h1>Test Description</h1>
+                        <p>This is a mock description of a recipe.</p>
+              </div>
+            </div>
+            <div class="image image--2-of-5">
+              <img src="birds/1V9A0837.jpeg">     
+              <div class="description">
+                <h1>Test Description</h1>
+                        <p>This is a mock description of a recipe.</p>
+              </div>
+            </div>
+            <div class="image image--3-of-5">
+              <img src="birds/1V9A0906.jpeg">  
+              <div class="description">
+                <h1>Test Description</h1>
+                        <p>This is a mock description of a recipe.</p>
+              </div>
+            </div>
+            <div class="image image--3">
+              <img src="birds/1V9A0941.jpeg">    
+              <div class="description">
+                <h1>Test Description</h1>
+                        <p>This is a mock description of a recipe.</p>
+              </div>
+            </div>
+            <div class="image image--3">
+              <img src="birds/1V9A0956.jpeg">     
+              <div class="description">
+                <h1>Test Description</h1>
+                        <p>This is a mock description of a recipe.</p>
+              </div>
+            </div>
+            <div class="image image--3">
+              <img src="birds/1V9A0985.jpeg">
+              <div class="description">
+                <h1>Test Description</h1>
+                        <p>This is a mock description of a recipe. Let's test out word wrapping in our description. Also, what
+                will happen if our description is taller than our image. This will take a lot of text to figure out, but it's
+                important that this behaviour is well known. La de da Lorem ipsum - How much more text is needed? Probably
+                just one more line. Well we need another line to push us above the top of the image I guess. Oh - overflow!</p>
+              </div>
+            </div>
+            <div class="image image--2-of-5">
+              <img src="birds/1V9A0739.jpeg">   
+              <div class="description">
+                <h1>Test Description</h1>
+                        <p>This is a mock description of a recipe.</p>
+              </div>
+            </div>
+            <div class="image image--3-of-5">
+              <img src="birds/1V9A0906.jpeg">  
+              <div class="description">
+                <h1>Test Description</h1>
+                        <p>This is a mock description of a recipe.</p>
+              </div>
+            </div>
+          </div>
+          
+        
+        </div>
+        <a class="work" id="myBtn" href="#">
           <div class="work-img">
             <img src="birds/1V9A0372.jpeg">
+            
           </div>
           <div class="work-content">
             <h4 class="work-title">Birding</h4>
             <p class="work-desc">Photos of birds from around the United States.</p>
           </div>
+
         </a>
+        
         <a class="work" href="#">
           <div class="work-img">
 
@@ -154,7 +319,7 @@
             <div class="modal_window">
               <h2 class="circle-title">Click any dot to continue!</h2>
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45%"
-                height="45%" viewBox="0 0 400 400">
+                height="45%" viewBox="0 0 400 400"> 
               
                 <circle id="center-circle" cx="204" cy="200" r="53">
 
@@ -181,32 +346,9 @@
                 </path>
               </svg>
               <div class='content-wrapper'>
-                <!-- <div id="content-header">
-                  <h1>Modal window form !</h1>
-                </div> -->
-                <!-- <form class="material-form" ng-controller="UserLogin" style="">
-                   <div class="material-input">
-                       <input type="text" ng-model="site.name" required>
-                       <label>Name</label> <span></span>
-                   </div>
-                   <div class="material-input">
-                       <input type="text" ng-model="site.name" required>
-                       <label>Email</label> <span></span>
-                   </div>
-                   <div class="material-input">
-                       <input type="text" ng-model="user.password" required>
-                       <label>Site</label> <span></span>
-                   </div>
-               </form> -->
                 <div class="grouping">
-                  <!-- <div class="btn-wrapper">
-                    <a href="#" type="button" class="btn" id="submit">Add</a>
-                    <a href="#" class="btn" id="cancel" style="color:black">Cancel</a>
-                  </div> -->
-
                   <div class="wrap">
                     <div class="instructions">
-                      <!-- <div class="first">Choose a staff member</div> -->
                     </div>
                     <div class="staff">
                       <div class="member">
