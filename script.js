@@ -3,32 +3,13 @@
 //Variables
 var modal = $(".modal_window");
 var content = $(".content-wrapper");
-var submit = $("#submit");
+// var submit = $(".submit");
 var cancel = $("#cancel");
 var protect = $(".protect");
 var modalIcon = $("svg");
 
-//modal click
-modal.on('click', function(event) {
-   event.preventDefault();
-   protect.css("background", "hsla(0, 100%, 0%, 0.3)"); //dim the background lights
-   modalIcon.css("display", "none"); //hide svg icon
-   modal.addClass('active'); //toggle dialog
-   content.css('display', 'block');
-});
-
-//Hide if click outside the modal window
-$(document).mouseup(function(e) {
-  if (!modal.is(e.target) && modal.has(e.target).length === 0) {
-      modal.removeClass('active');
-      modalIcon.css('display', 'block');
-      content.css('display', 'none')
-      protect.css('background', 'none')
-   }
-});
-
 //MENTOR//
-$('.member').on('click', function(){
+$('.member').on('click', function(e){
   if (!$(this).hasClass('selected')){
     $(this).addClass('selected');
     $('.wrap').addClass('member-selected');
@@ -173,6 +154,25 @@ function addCalendar(container){
   invokeCalendarListener();
 }
 
+
+//modal click
+modal.on('click', function(event) {
+  event.preventDefault();
+  protect.css("background", "hsla(0, 100%, 0%, 0.3)"); //dim the background lights
+  modalIcon.css("display", "none"); //hide svg icon
+  modal.addClass('active'); //toggle dialog
+  content.css('display', 'block');
+});
+
+//Hide if click outside the modal window
+$(document).mouseup(function(e) {
+ if (!modal.is(e.target) && modal.has(e.target).length === 0) {
+     modal.removeClass('active');
+     modalIcon.css('display', 'block');
+     content.css('display', 'none')
+     protect.css('background', 'none')
+  }
+});
 
 ///////PICTURE MODAL BIRD////////
 var modal_new = document.getElementById("myModal");
